@@ -152,15 +152,19 @@ window.Traitify.ui.slideDeck = (assessmentId, selector, options)->
     slideCaption = @div({class:"caption"})
     slideCaption.innerHTML = slideData.caption
 
-    if Builder.device
-        slideImg = @div({
-          style:"background-image:url('#{slideData.image_desktop_retina}'); background-position:#{slideData.focus_x}% #{slideData.focus_y}%;'", 
-          class:"image"
-        })
-        slideImg.appendChild(slideCaption)
+
+    if navigator.platform == "MacIntel" || ["iphone", "ipad"].indexOf(Builder.device) != -1
+      imgName = slideData.image_desktop_retina
     else
-        slideImg = @img({src:slideData.image_desktop_retina})
-        slide.appendChild(slideCaption)
+      imgName = slideData.image_desktop
+      
+    slideImg = @div({
+      style:"background-image:url('#{imgName}');" +
+      "background-position:#{slideData.focus_x}% #{slideData.focus_y}%;'", 
+      class:"image"
+    })
+
+    slideImg.appendChild(slideCaption)
 
     slide.appendChild(slideImg)
     slide
@@ -203,6 +207,16 @@ window.Traitify.ui.slideDeck = (assessmentId, selector, options)->
       if (touchDifferenceX < 2 && touchDifferenceX < 2)   
         callBack()
     )
+  
+  Builder.helpers.transitionEnd = (node, callBack)->
+    transitionNames = ['webkitTransitionEnd', 'transitionend', 'oTransitionEnd', 'otransitionend']
+
+    for transition in transitionNames
+      node.addEventListener(transition, (event)->    
+        callBack(event);
+      , false)
+
+                                        
   Builder.helpers.onload = (callBack)->
     if (window.addEventListener)
         window.addEventListener('load', callBack)
@@ -249,7 +263,7 @@ window.Traitify.ui.slideDeck = (assessmentId, selector, options)->
       if !Builder.data.slides[Builder.data.currentSlide] 
         Builder.events.loadingAnimation()
 
-      Builder.states.animating = false
+      Builder.states.animating = true
       Builder.events.advanceSlide()
 
       currentSlide = Builder.data.slides[Builder.data.currentSlide - 1]
@@ -274,29 +288,11 @@ window.Traitify.ui.slideDeck = (assessmentId, selector, options)->
 
     Builder.nodes.currentSlide = Builder.nodes.nextSlide
 
-    Builder.nodes.currentSlide.addEventListener('webkitTransitionEnd', (event)-> 
-      if Builder.events.advancedSlide
-        Builder.events.advancedSlide()
+    Builder.helpers.transitionEnd(Builder.nodes.currentSlide, (event)->
+      if Builder.callbacks.advanceSlide
+        Builder.callbacks.advanceSlide()
       Builder.states.animating = false
-    , false )
-
-    Builder.nodes.currentSlide.addEventListener('transitionend', (event)-> 
-      if Builder.events.advancedSlide
-        Builder.events.advancedSlide()
-      Builder.states.animating = false
-    , false )
-  
-    Builder.nodes.currentSlide.addEventListener('oTransitionEnd', (event)-> 
-      if Builder.events.advancedSlide
-        Builder.events.advancedSlide()
-      Builder.states.animating = false
-    , false )
-  
-    Builder.nodes.currentSlide.addEventListener('otransitionend', (event)-> 
-      if Builder.events.advancedSlide
-        Builder.events.advancedSlide()
-      Builder.states.animating = false
-    , false )
+    )
   
     Builder.nodes.playedSlide.className += " played"
     Builder.nodes.currentSlide.className += " active"
@@ -333,7 +329,7 @@ window.Traitify.ui.slideDeck = (assessmentId, selector, options)->
       Builder.nodes.container.className = Builder.nodes.container.className.replace(" small", "")
       if width < 480
         Builder.nodes.container.className += " small"
-      else if width < 768
+      else if width < 868
         Builder.nodes.container.className += " medium"
       
   Builder.events.onRotate = (rotateEvent)->
@@ -359,7 +355,7 @@ window.Traitify.ui.slideDeck = (assessmentId, selector, options)->
 
       Builder.nodes.main.innerHTML = ""
 
-      Builder.nodes.main.appendChild(style)
+      #Builder.nodes.main.appendChild(style)
 
       if Builder.data.slides.length != 0
         Builder.nodes.container = Builder.partials.slideDeckContainer()
