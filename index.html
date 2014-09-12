@@ -34,6 +34,12 @@
 <p>This package does not require jQuery, as it is a standalone encapsulated library. It does however require a browser with the ability to make cors requests (currently only supports ie10 and up, chrome, safari, and firefox).</p>
 
 <h3>
+<a name="assessment-id-and-public-key-required" class="anchor" href="#assessment-id-and-public-key-required"><span class="octicon octicon-link"></span></a>Assessment id and public key required!</h3>
+
+<p>For instructions on obtaining an assessment id and a public key visit:
+<a href="https://developer.traitify.com">https://developer.traitify.com</a></p>
+
+<h3>
 <a name="using-traitify-js-ui" class="anchor" href="#using-traitify-js-ui"><span class="octicon octicon-link"></span></a>Using Traitify JS UI:</h3>
 
 <p>Include the Traitify.js library:</p>
@@ -69,14 +75,14 @@
     <span class="c1">// the widget has finished loading</span>
     <span class="nx">traitify</span><span class="p">.</span><span class="nx">onInitialize</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">traitify</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"INITIALIZED"</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Initialized"</span><span class="p">);</span>
     <span class="p">})</span>
 
     <span class="c1">// This callback gives you the ability to trigger an event when</span>
     <span class="c1">// the user has finished playing the slide deck</span>
     <span class="nx">traitify</span><span class="p">.</span><span class="nx">onFinished</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">traitify</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"FINISHED!"</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Finished!"</span><span class="p">);</span>
     <span class="p">})</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
