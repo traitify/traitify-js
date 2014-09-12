@@ -43,7 +43,7 @@ $ cake test
 </code></pre>
 
 <h3>
-<a name="using-traitify-js" class="anchor" href="#using-traitify-js"><span class="octicon octicon-link"></span></a>Using Traitify JS:</h3>
+<a name="using-traitify-js-ui" class="anchor" href="#using-traitify-js-ui"><span class="octicon octicon-link"></span></a>Using Traitify JS UI:</h3>
 
 <p>The CDN can be found at:</p>
 
@@ -83,6 +83,44 @@ $ cake test
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"INITIALIZED"</span><span class="p">);</span>
     <span class="p">})</span>
 <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<h3>
+<a name="using-traitify-js-ui-1" class="anchor" href="#using-traitify-js-ui-1"><span class="octicon octicon-link"></span></a>Using Traitify JS UI:</h3>
+
+<div class="highlight highlight-xhtml"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.traitify.com/js/api/1.0.0.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<h4>
+<a name="get-decks" class="anchor" href="#get-decks"><span class="octicon octicon-link"></span></a>Get Decks</h4>
+
+<div class="highlight highlight-JavaScript"><pre><span class="nx">Traitify</span><span class="p">.</span><span class="nx">getDecks</span><span class="p">(</span><span class="s2">"assessment id"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+
+<h5>
+<a name="get-slides" class="anchor" href="#get-slides"><span class="octicon octicon-link"></span></a>Get Slides</h5>
+
+<div class="highlight highlight-JavaScript"><pre><span class="nx">Traitify</span><span class="p">.</span><span class="nx">getSlides</span><span class="p">(</span><span class="s2">"assessment id"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+
+<h5>
+<a name="get-personality-traits" class="anchor" href="#get-personality-traits"><span class="octicon octicon-link"></span></a>Get Personality Traits</h5>
+
+<div class="highlight highlight-JavaScript"><pre><span class="nx">Traitify</span><span class="p">.</span><span class="nx">addSlide</span><span class="p">(</span><span class="s2">"assessment id"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+
+<h5>
+<a name="get-personality-traits-1" class="anchor" href="#get-personality-traits-1"><span class="octicon octicon-link"></span></a>Get Personality Traits</h5>
+
+<div class="highlight highlight-JavaScript"><pre><span class="nx">Traitify</span><span class="p">.</span><span class="nx">getPersonalityTraits</span><span class="p">(</span><span class="s2">"assessment id"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+<span class="p">})</span>
 </pre></div>
       </section>
       <footer>
