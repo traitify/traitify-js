@@ -44,12 +44,12 @@
 
 <p>You can initialize using an id or a class on any div tag:</p>
 
-<div class="highlight highlight-HTML"><pre><span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"traitify-widget"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<div class="highlight highlight-HTML"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"traitify-widget"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre></div>
 
-<span class="nt">&lt;script&gt;</span>
+<p>The following javascript will initialize with the above html:</p>
+
+<div class="highlight highlight-HTML"><pre><span class="nt">&lt;script&gt;</span>
     <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setPublicKey</span><span class="p">(</span><span class="s2">"Your public key"</span><span class="p">);</span>
     <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setHost</span><span class="p">(</span><span class="s2">"The Host For Your Url"</span><span class="p">);</span>
     <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setVersion</span><span class="p">(</span><span class="s2">"Version of API (v1)"</span><span class="p">);</span>
