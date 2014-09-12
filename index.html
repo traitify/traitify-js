@@ -44,40 +44,47 @@
 
 <p>You can initialize using an id or a class on any div tag:</p>
 
-<div class="highlight highlight-HTML"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"traitify-widget"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<div class="highlight highlight-HTML"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"traitify-widget"</span><span class="nt">&gt;&lt;/div&gt;</span> <span class="c">&lt;!-- Example Target Div for the widget --&gt;</span>
 </pre></div>
 
 <p>The following javascript will initialize with the above html:</p>
 
 <div class="highlight highlight-HTML"><pre><span class="nt">&lt;script&gt;</span>
-    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setPublicKey</span><span class="p">(</span><span class="s2">"Your public key"</span><span class="p">);</span>
-    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setHost</span><span class="p">(</span><span class="s2">"The Host For Your Url"</span><span class="p">);</span>
-    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setVersion</span><span class="p">(</span><span class="s2">"Version of API (v1)"</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">assessmentId</span> <span class="o">=</span> <span class="s2">"Your assessment Id"</span><span class="p">;</span>
+    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setPublicKey</span><span class="p">(</span><span class="s2">"8asdf8sda-f98as-df8ads-fadsf"</span><span class="p">);</span> <span class="c1">// Example Public Key</span>
+    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setHost</span><span class="p">(</span><span class="s2">"api-sandbox.traitify.com"</span><span class="p">);</span> <span class="c1">// Example host url (Defaults to api.traitify.com)</span>
+    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setVersion</span><span class="p">(</span><span class="s2">"v1"</span><span class="p">);</span> <span class="c1">// Example Version</span>
+    <span class="kd">var</span> <span class="nx">assessmentId</span> <span class="o">=</span> <span class="s2">"34aeraw23-3a43a32-234a34as42"</span><span class="p">;</span> <span class="c1">// Example Assessment id</span>
 
-    <span class="nx">traitify</span> <span class="o">=</span> <span class="nx">Traitify</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">slideDeck</span><span class="p">(</span><span class="nx">assessmentId</span><span class="p">,</span> <span class="s2">".traitify-widget"</span><span class="p">)</span>
+    <span class="nx">traitify</span> <span class="o">=</span> <span class="nx">Traitify</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">slideDeck</span><span class="p">(</span><span class="nx">assessmentId</span><span class="p">,</span> <span class="s2">".traitify-widget"</span><span class="p">)</span> <span class="c1">// Example selector for widget target</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
 
 <p>When you initialize the widget we return our widget builder to you (This is the same builder we use to construct the widget).</p>
 
 <div class="highlight highlight-HTML"><pre><span class="nt">&lt;script&gt;</span>
-    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setPublicKey</span><span class="p">(</span><span class="s2">"Your public key"</span><span class="p">);</span>
-    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setHost</span><span class="p">(</span><span class="s2">"The Host For Your Url"</span><span class="p">);</span>
-    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setVersion</span><span class="p">(</span><span class="s2">"Version of API (v1)"</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">assessmentId</span> <span class="o">=</span> <span class="s2">"Your assessment Id"</span><span class="p">;</span>
 
     <span class="nx">traitify</span> <span class="o">=</span> <span class="nx">Traitify</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">slideDeck</span><span class="p">(</span><span class="nx">assessmentId</span><span class="p">,</span> <span class="s2">".traitify-widget"</span><span class="p">)</span>
 
+    <span class="c1">// This callback gives you the ability to trigger an event when</span>
+    <span class="c1">// the widget has finished loading</span>
     <span class="nx">traitify</span><span class="p">.</span><span class="nx">onInitialize</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">traitify</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"INITIALIZED"</span><span class="p">);</span>
     <span class="p">})</span>
+
+    <span class="c1">// This callback gives you the ability to trigger an event when</span>
+    <span class="c1">// the user has finished playing the slide deck</span>
+    <span class="nx">traitify</span><span class="p">.</span><span class="nx">onFinished</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">traitify</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"FINISHED!"</span><span class="p">);</span>
+    <span class="p">})</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
 
+<h1></h1>
+
 <h3>
-<a name="using-traitify-js" class="anchor" href="#using-traitify-js"><span class="octicon octicon-link"></span></a>Using Traitify JS:</h3>
+<a name="using-traitify-js-api-client" class="anchor" href="#using-traitify-js-api-client"><span class="octicon octicon-link"></span></a>Using Traitify JS API CLIENT:</h3>
 
 <div class="highlight highlight-xhtml"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.traitify.com/js/api/1.0.0.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
