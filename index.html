@@ -34,24 +34,15 @@
 <p>This package does not require jQuery, as it is a standalone encapsulated library. It does however require a browser with the ability to make cors requests (currently only supports ie10 and up, chrome, safari, and firefox).</p>
 
 <h3>
-<a name="running-building-testing-and-bundling" class="anchor" href="#running-building-testing-and-bundling"><span class="octicon octicon-link"></span></a>Running, Building, Testing and Bundling:</h3>
-
-<pre lang="Shell"><code>$ cake watch
-$ cake build
-$ cake bundle
-$ cake test
-</code></pre>
-
-<h3>
 <a name="using-traitify-js-ui" class="anchor" href="#using-traitify-js-ui"><span class="octicon octicon-link"></span></a>Using Traitify JS UI:</h3>
 
-<p>The CDN can be found at:</p>
+<p>Include the Traitify.js library:</p>
 
 <div class="highlight highlight-xhtml"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.traitify.com/js/api/1.0.0.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.traitify.com/js/widgets/slide_deck/2.0.0.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 
-<p>How to initialize:</p>
+<p>You can initialize using an id or a class on any div tag:</p>
 
 <div class="highlight highlight-HTML"><pre><span class="nt">&lt;div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"traitify-widget"</span><span class="nt">&gt;</span>
@@ -91,8 +82,8 @@ $ cake test
 <div class="highlight highlight-xhtml"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.traitify.com/js/api/1.0.0.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 
-<h4>
-<a name="get-decks" class="anchor" href="#get-decks"><span class="octicon octicon-link"></span></a>Get Decks</h4>
+<h5>
+<a name="get-decks" class="anchor" href="#get-decks"><span class="octicon octicon-link"></span></a>Get Decks</h5>
 
 <div class="highlight highlight-JavaScript"><pre><span class="nx">Traitify</span><span class="p">.</span><span class="nx">getDecks</span><span class="p">(</span><span class="s2">"assessment id"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
@@ -122,6 +113,18 @@ $ cake test
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
 <span class="p">})</span>
 </pre></div>
+
+<h3>
+<a name="contributining" class="anchor" href="#contributining"><span class="octicon octicon-link"></span></a>Contributining</h3>
+
+<h4>
+<a name="building-testing-and-bundling" class="anchor" href="#building-testing-and-bundling"><span class="octicon octicon-link"></span></a>Building, Testing and Bundling:</h4>
+
+<pre lang="Shell"><code>$ cake watch
+$ cake build
+$ cake bundle
+$ cake test
+</code></pre>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/traitify">traitify</a></p>
