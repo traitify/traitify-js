@@ -102,7 +102,7 @@ Warning, things may break if you use edge, it is not stable, and is not intended
 </script>
 ```
 
-### Contributining 
+### Contributing 
 #### Building, Testing and Bundling:
 ```Shell
 $ cake watch
