@@ -40,12 +40,16 @@
 <a href="https://developer.traitify.com">https://developer.traitify.com</a></p>
 
 <h3>
+<a name="using-the-latest-and-greatestedge" class="anchor" href="#using-the-latest-and-greatestedge"><span class="octicon octicon-link"></span></a>Using The Latest and Greatest(Edge)!</h3>
+
+<p>For directions on using the latest traitify js scroll to the bottom</p>
+
+<h3>
 <a name="using-traitify-js-ui" class="anchor" href="#using-traitify-js-ui"><span class="octicon octicon-link"></span></a>Using Traitify JS UI:</h3>
 
 <p>Include the Traitify.js library:</p>
 
-<div class="highlight highlight-xhtml"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.traitify.com/js/api/1.0.0.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.traitify.com/js/widgets/slide_deck/2.0.0.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="highlight highlight-xhtml"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.traitify.com/lib/stable.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 
 <p>You can initialize using an id or a class on any div tag:</p>
@@ -61,7 +65,7 @@
     <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setVersion</span><span class="p">(</span><span class="s2">"v1"</span><span class="p">);</span> <span class="c1">// Example Version</span>
     <span class="kd">var</span> <span class="nx">assessmentId</span> <span class="o">=</span> <span class="s2">"34aeraw23-3a43a32-234a34as42"</span><span class="p">;</span> <span class="c1">// Example Assessment id</span>
 
-    <span class="nx">traitify</span> <span class="o">=</span> <span class="nx">Traitify</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">slideDeck</span><span class="p">(</span><span class="nx">assessmentId</span><span class="p">,</span> <span class="s2">".traitify-widget"</span><span class="p">)</span> <span class="c1">// Example selector for widget target</span>
+    <span class="nx">traitify</span> <span class="o">=</span> <span class="nx">Traitify</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">assessmentId</span><span class="p">,</span> <span class="s2">".traitify-widget"</span><span class="p">);</span> <span class="c1">// Example selector for widget target</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
 
@@ -69,7 +73,7 @@
 
 <div class="highlight highlight-HTML"><pre><span class="nt">&lt;script&gt;</span>
 
-    <span class="nx">traitify</span> <span class="o">=</span> <span class="nx">Traitify</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">slideDeck</span><span class="p">(</span><span class="nx">assessmentId</span><span class="p">,</span> <span class="s2">".traitify-widget"</span><span class="p">)</span>
+    <span class="nx">traitify</span> <span class="o">=</span> <span class="nx">Traitify</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">assessmentId</span><span class="p">,</span> <span class="s2">".traitify-widget"</span><span class="p">)</span>
 
     <span class="c1">// This callback gives you the ability to trigger an event when</span>
     <span class="c1">// the widget has finished loading</span>
@@ -92,7 +96,7 @@
 <h3>
 <a name="using-traitify-js-api-client" class="anchor" href="#using-traitify-js-api-client"><span class="octicon octicon-link"></span></a>Using Traitify JS API CLIENT:</h3>
 
-<div class="highlight highlight-xhtml"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.traitify.com/js/api/1.0.0.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="highlight highlight-xhtml"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.traitify.com/lib/stable.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 
 <h5>
@@ -125,6 +129,22 @@
 <div class="highlight highlight-JavaScript"><pre><span class="nx">Traitify</span><span class="p">.</span><span class="nx">getPersonalityTraits</span><span class="p">(</span><span class="s2">"assessment id"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
 <span class="p">})</span>
+</pre></div>
+
+<h3>
+<a name="using-edge" class="anchor" href="#using-edge"><span class="octicon octicon-link"></span></a>Using Edge</h3>
+
+<p>Warning, things may break if you use edge, it is not stable, and is not intended to be. If you're looking for a stable deployment the stable bundle from the above cdn.</p>
+
+<div class="highlight highlight-xhtml"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.traitify.com/lib/edge.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setPublicKey</span><span class="p">(</span><span class="s2">"8asdf8sda-f98as-df8ads-fadsf"</span><span class="p">);</span> <span class="c1">// Example Public Key</span>
+    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setHost</span><span class="p">(</span><span class="s2">"api-sandbox.traitify.com"</span><span class="p">);</span> <span class="c1">// Example host url (Defaults to api.traitify.com)</span>
+    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setVersion</span><span class="p">(</span><span class="s2">"v1"</span><span class="p">);</span> <span class="c1">// Example Version</span>
+    <span class="kd">var</span> <span class="nx">assessmentId</span> <span class="o">=</span> <span class="s2">"34aeraw23-3a43a32-234a34as42"</span><span class="p">;</span> <span class="c1">// Example Assessment id</span>
+
+    <span class="nx">traitify</span> <span class="o">=</span> <span class="nx">Traitify</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">assessmentId</span><span class="p">,</span> <span class="s2">".traitify-widget"</span><span class="p">);</span> <span class="c1">// Example selector for widget target</span>
+<span class="nt">&lt;/script&gt;</span>
 </pre></div>
 
 <h3>
