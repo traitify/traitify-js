@@ -29,135 +29,124 @@
       </header>
       <section>
         <h1>
-<a name="traitifyjs" class="anchor" href="#traitifyjs"><span class="octicon octicon-link"></span></a>Traitify.js</h1>
+<a id="traitifyjs" class="anchor" href="#traitifyjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Traitify.js</h1>
 
 <p>This package does not require jQuery, as it is a standalone encapsulated library. It does however require a browser with the ability to make cors requests (currently only supports ie10 and up, chrome, safari, and firefox).</p>
 
 <h3>
-<a name="assessment-id-and-public-key-required" class="anchor" href="#assessment-id-and-public-key-required"><span class="octicon octicon-link"></span></a>Assessment id and public key required!</h3>
+<a id="assessment-id-and-public-key-required" class="anchor" href="#assessment-id-and-public-key-required" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assessment id and public key required!</h3>
 
 <p>For instructions on obtaining an assessment id and a public key visit:
 <a href="https://developer.traitify.com">https://developer.traitify.com</a></p>
 
 <h3>
-<a name="using-the-latest-and-greatestedge" class="anchor" href="#using-the-latest-and-greatestedge"><span class="octicon octicon-link"></span></a>Using The Latest and Greatest(Edge)!</h3>
+<a id="using-the-latest-and-greatestedge" class="anchor" href="#using-the-latest-and-greatestedge" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using The Latest and Greatest(Edge)!</h3>
 
 <p>For directions on using the latest traitify js scroll to the bottom</p>
 
 <h3>
-<a name="using-traitify-js-ui" class="anchor" href="#using-traitify-js-ui"><span class="octicon octicon-link"></span></a>Using Traitify JS UI:</h3>
+<a id="using-traitify-js-ui" class="anchor" href="#using-traitify-js-ui" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using Traitify JS UI:</h3>
 
 <p>Include the Traitify.js library:</p>
 
-<div class="highlight highlight-xhtml"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.traitify.com/lib/stable.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
+<div class="highlight highlight-xhtml"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>https://cdn.traitify.com/lib/v1.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
 <p>You can initialize using an id or a class on any div tag:</p>
 
-<div class="highlight highlight-HTML"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"traitify-widget"</span><span class="nt">&gt;&lt;/div&gt;</span> <span class="c">&lt;!-- Example Target Div for the widget --&gt;</span>
-</pre></div>
+<div class="highlight highlight-HTML"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>traitify-widget<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt; <span class="pl-c">&lt;!-- Example Target Div for the widget --&gt;</span></pre></div>
 
 <p>The following javascript will initialize with the above html:</p>
 
-<div class="highlight highlight-HTML"><pre><span class="nt">&lt;script&gt;</span>
-    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setPublicKey</span><span class="p">(</span><span class="s2">"8asdf8sda-f98as-df8ads-fadsf"</span><span class="p">);</span> <span class="c1">// Example Public Key</span>
-    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setHost</span><span class="p">(</span><span class="s2">"api-sandbox.traitify.com"</span><span class="p">);</span> <span class="c1">// Example host url (Defaults to api.traitify.com)</span>
-    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setVersion</span><span class="p">(</span><span class="s2">"v1"</span><span class="p">);</span> <span class="c1">// Example Version</span>
-    <span class="kd">var</span> <span class="nx">assessmentId</span> <span class="o">=</span> <span class="s2">"34aeraw23-3a43a32-234a34as42"</span><span class="p">;</span> <span class="c1">// Example Assessment id</span>
-
-    <span class="nx">traitify</span> <span class="o">=</span> <span class="nx">Traitify</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">assessmentId</span><span class="p">,</span> <span class="s2">".traitify-widget"</span><span class="p">);</span> <span class="c1">// Example selector for widget target</span>
-<span class="nt">&lt;/script&gt;</span>
-</pre></div>
+<div class="highlight highlight-HTML"><pre><span class="pl-s2">&lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s2">    Traitify.setPublicKey(<span class="pl-s1"><span class="pl-pds">"</span>8asdf8sda-f98as-df8ads-fadsf<span class="pl-pds">"</span></span>); <span class="pl-c">// Example Public Key</span></span>
+<span class="pl-s2">    Traitify.setHost(<span class="pl-s1"><span class="pl-pds">"</span>api-sandbox.traitify.com<span class="pl-pds">"</span></span>); <span class="pl-c">// Example host url (Defaults to api.traitify.com)</span></span>
+<span class="pl-s2">    Traitify.setVersion(<span class="pl-s1"><span class="pl-pds">"</span>v1<span class="pl-pds">"</span></span>); <span class="pl-c">// Example Version</span></span>
+<span class="pl-s2">    <span class="pl-s">var</span> assessmentId <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">"</span>34aeraw23-3a43a32-234a34as42<span class="pl-pds">"</span></span>; <span class="pl-c">// Example Assessment id</span></span>
+<span class="pl-s2"></span>
+<span class="pl-s2">    traitify <span class="pl-k">=</span> Traitify.ui.<span class="pl-s3">load</span>(assessmentId, <span class="pl-s1"><span class="pl-pds">"</span>.traitify-widget<span class="pl-pds">"</span></span>); <span class="pl-c">// Example selector for widget target</span></span>
+<span class="pl-s2">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
 
 <p>When you initialize the widget we return our widget builder to you (This is the same builder we use to construct the widget).</p>
 
-<div class="highlight highlight-HTML"><pre><span class="nt">&lt;script&gt;</span>
-
-    <span class="nx">traitify</span> <span class="o">=</span> <span class="nx">Traitify</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">assessmentId</span><span class="p">,</span> <span class="s2">".traitify-widget"</span><span class="p">)</span>
-
-    <span class="c1">// This callback gives you the ability to trigger an event when</span>
-    <span class="c1">// the widget has finished loading</span>
-    <span class="nx">traitify</span><span class="p">.</span><span class="nx">onInitialize</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">traitify</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Initialized"</span><span class="p">);</span>
-    <span class="p">})</span>
-
-    <span class="c1">// This callback gives you the ability to trigger an event when</span>
-    <span class="c1">// the user has finished playing the slide deck</span>
-    <span class="nx">traitify</span><span class="p">.</span><span class="nx">onFinished</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">traitify</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Finished!"</span><span class="p">);</span>
-    <span class="p">})</span>
-<span class="nt">&lt;/script&gt;</span>
-</pre></div>
+<div class="highlight highlight-HTML"><pre><span class="pl-s2">&lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">    traitify <span class="pl-k">=</span> Traitify.ui.<span class="pl-s3">load</span>(assessmentId, <span class="pl-s1"><span class="pl-pds">"</span>.traitify-widget<span class="pl-pds">"</span></span>)</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">    <span class="pl-c">// This callback gives you the ability to trigger an event when</span></span>
+<span class="pl-s2">    <span class="pl-c">// the widget has finished loading</span></span>
+<span class="pl-s2">    traitify.onInitialize(<span class="pl-st">function</span>(){</span>
+<span class="pl-s2">        <span class="pl-en">console</span><span class="pl-s3">.log</span>(traitify.<span class="pl-sc">data</span>);</span>
+<span class="pl-s2">        <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">"</span>Initialized<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s2">    })</span>
+<span class="pl-s2"></span>
+<span class="pl-s2">    <span class="pl-c">// This callback gives you the ability to trigger an event when</span></span>
+<span class="pl-s2">    <span class="pl-c">// the user has finished playing the slide deck</span></span>
+<span class="pl-s2">    traitify.onFinished(<span class="pl-st">function</span>(){</span>
+<span class="pl-s2">        <span class="pl-en">console</span><span class="pl-s3">.log</span>(traitify.<span class="pl-sc">data</span>);</span>
+<span class="pl-s2">        <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">"</span>Finished!<span class="pl-pds">"</span></span>);</span>
+<span class="pl-s2">    })</span>
+<span class="pl-s2">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
 
 <h1></h1>
 
 <h3>
-<a name="using-traitify-js-api-client" class="anchor" href="#using-traitify-js-api-client"><span class="octicon octicon-link"></span></a>Using Traitify JS API CLIENT:</h3>
+<a id="using-traitify-js-api-client" class="anchor" href="#using-traitify-js-api-client" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using Traitify JS API CLIENT:</h3>
 
-<div class="highlight highlight-xhtml"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.traitify.com/lib/stable.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
-
-<h5>
-<a name="get-decks" class="anchor" href="#get-decks"><span class="octicon octicon-link"></span></a>Get Decks</h5>
-
-<div class="highlight highlight-JavaScript"><pre><span class="nx">Traitify</span><span class="p">.</span><span class="nx">getDecks</span><span class="p">(</span><span class="s2">"assessment id"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-<span class="p">})</span>
-</pre></div>
+<div class="highlight highlight-xhtml"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>https://cdn.traitify.com/lib/v1.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
 <h5>
-<a name="get-slides" class="anchor" href="#get-slides"><span class="octicon octicon-link"></span></a>Get Slides</h5>
+<a id="get-decks" class="anchor" href="#get-decks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get Decks</h5>
 
-<div class="highlight highlight-JavaScript"><pre><span class="nx">Traitify</span><span class="p">.</span><span class="nx">getSlides</span><span class="p">(</span><span class="s2">"assessment id"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-<span class="p">})</span>
-</pre></div>
-
-<h5>
-<a name="get-personality-traits" class="anchor" href="#get-personality-traits"><span class="octicon octicon-link"></span></a>Get Personality Traits</h5>
-
-<div class="highlight highlight-JavaScript"><pre><span class="nx">Traitify</span><span class="p">.</span><span class="nx">addSlide</span><span class="p">(</span><span class="s2">"assessment id"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-<span class="p">})</span>
-</pre></div>
+<div class="highlight highlight-JavaScript"><pre>Traitify.getDecks(<span class="pl-s1"><span class="pl-pds">"</span>assessment id<span class="pl-pds">"</span></span>, <span class="pl-st">function</span>(<span class="pl-vpf">data</span>){
+  <span class="pl-en">console</span><span class="pl-s3">.log</span>(data)
+})</pre></div>
 
 <h5>
-<a name="get-personality-traits-1" class="anchor" href="#get-personality-traits-1"><span class="octicon octicon-link"></span></a>Get Personality Traits</h5>
+<a id="get-slides" class="anchor" href="#get-slides" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get Slides</h5>
 
-<div class="highlight highlight-JavaScript"><pre><span class="nx">Traitify</span><span class="p">.</span><span class="nx">getPersonalityTraits</span><span class="p">(</span><span class="s2">"assessment id"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-<span class="p">})</span>
-</pre></div>
+<div class="highlight highlight-JavaScript"><pre>Traitify.getSlides(<span class="pl-s1"><span class="pl-pds">"</span>assessment id<span class="pl-pds">"</span></span>, <span class="pl-st">function</span>(<span class="pl-vpf">data</span>){
+  <span class="pl-en">console</span><span class="pl-s3">.log</span>(data)
+})</pre></div>
+
+<h5>
+<a id="get-personality-traits" class="anchor" href="#get-personality-traits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get Personality Traits</h5>
+
+<div class="highlight highlight-JavaScript"><pre>Traitify.addSlide(<span class="pl-s1"><span class="pl-pds">"</span>assessment id<span class="pl-pds">"</span></span>, <span class="pl-st">function</span>(<span class="pl-vpf">data</span>){
+    <span class="pl-en">console</span><span class="pl-s3">.log</span>(data)
+})</pre></div>
+
+<h5>
+<a id="get-personality-traits-1" class="anchor" href="#get-personality-traits-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get Personality Traits</h5>
+
+<div class="highlight highlight-JavaScript"><pre>Traitify.getPersonalityTraits(<span class="pl-s1"><span class="pl-pds">"</span>assessment id<span class="pl-pds">"</span></span>, <span class="pl-st">function</span>(<span class="pl-vpf">data</span>){
+    <span class="pl-en">console</span><span class="pl-s3">.log</span>(data)
+})</pre></div>
 
 <h3>
-<a name="using-edge" class="anchor" href="#using-edge"><span class="octicon octicon-link"></span></a>Using Edge</h3>
+<a id="using-edge" class="anchor" href="#using-edge" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using Edge</h3>
 
-<p>Warning, things may break if you use edge, it is not stable, and is not intended to be. If you're looking for a stable deployment the stable bundle from the above cdn.</p>
+<p>Warning, things may break if you use edge, it is not stable, and is not intended to be. If you're looking for a stable deployment then use the v1 bundle from the above cdn.</p>
 
-<div class="highlight highlight-xhtml"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.traitify.com/lib/edge.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script&gt;</span>
-    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setPublicKey</span><span class="p">(</span><span class="s2">"8asdf8sda-f98as-df8ads-fadsf"</span><span class="p">);</span> <span class="c1">// Example Public Key</span>
-    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setHost</span><span class="p">(</span><span class="s2">"api-sandbox.traitify.com"</span><span class="p">);</span> <span class="c1">// Example host url (Defaults to api.traitify.com)</span>
-    <span class="nx">Traitify</span><span class="p">.</span><span class="nx">setVersion</span><span class="p">(</span><span class="s2">"v1"</span><span class="p">);</span> <span class="c1">// Example Version</span>
-    <span class="kd">var</span> <span class="nx">assessmentId</span> <span class="o">=</span> <span class="s2">"34aeraw23-3a43a32-234a34as42"</span><span class="p">;</span> <span class="c1">// Example Assessment id</span>
-
-    <span class="nx">traitify</span> <span class="o">=</span> <span class="nx">Traitify</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">assessmentId</span><span class="p">,</span> <span class="s2">".traitify-widget"</span><span class="p">);</span> <span class="c1">// Example selector for widget target</span>
-<span class="nt">&lt;/script&gt;</span>
-</pre></div>
+<div class="highlight highlight-xhtml"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>https://cdn.traitify.com/lib/edge.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-s2">&lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s2">    Traitify.setPublicKey(<span class="pl-s1"><span class="pl-pds">"</span>8asdf8sda-f98as-df8ads-fadsf<span class="pl-pds">"</span></span>); <span class="pl-c">// Example Public Key</span></span>
+<span class="pl-s2">    Traitify.setHost(<span class="pl-s1"><span class="pl-pds">"</span>api-sandbox.traitify.com<span class="pl-pds">"</span></span>); <span class="pl-c">// Example host url (Defaults to api.traitify.com)</span></span>
+<span class="pl-s2">    Traitify.setVersion(<span class="pl-s1"><span class="pl-pds">"</span>v1<span class="pl-pds">"</span></span>); <span class="pl-c">// Example Version</span></span>
+<span class="pl-s2">    <span class="pl-s">var</span> assessmentId <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">"</span>34aeraw23-3a43a32-234a34as42<span class="pl-pds">"</span></span>; <span class="pl-c">// Example Assessment id</span></span>
+<span class="pl-s2"></span>
+<span class="pl-s2">    traitify <span class="pl-k">=</span> Traitify.ui.<span class="pl-s3">load</span>(assessmentId, <span class="pl-s1"><span class="pl-pds">"</span>.traitify-widget<span class="pl-pds">"</span></span>); <span class="pl-c">// Example selector for widget target</span></span>
+<span class="pl-s2">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
 
 <h3>
-<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h3>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h3>
 
 <h4>
-<a name="building-testing-and-bundling" class="anchor" href="#building-testing-and-bundling"><span class="octicon octicon-link"></span></a>Building, Testing and Bundling:</h4>
+<a id="building-testing-and-bundling" class="anchor" href="#building-testing-and-bundling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building, Testing and Bundling:</h4>
 
-<pre lang="Shell"><code>$ cake watch
+<div class="highlight highlight-Shell"><pre>$ cake watch
 $ cake build
 $ cake bundle
-$ cake test
-</code></pre>
+$ cake <span class="pl-s3">test</span></pre></div>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/traitify">traitify</a></p>
