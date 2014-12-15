@@ -14,7 +14,7 @@ For directions on using the latest traitify js scroll to the bottom
 Include the Traitify.js library:
 
 ```xhtml
-<script src="https://cdn.traitify.com/lib/v1.js"></script>
+<script src="https://s3.amazonaws.com/traitify-cdn/lib/v1.js"></script>
 ```
 
 You can initialize using an id or a class on any div tag:
@@ -58,7 +58,7 @@ When you initialize the widget we return our widget builder to you (This is the 
 ===============
 ### Using Traitify JS API CLIENT:
 ```xhtml
-<script src="https://cdn.traitify.com/lib/v1.js"></script>
+<script src="https://s3.amazonaws.com/traitify-cdn/lib/v1.js"></script>
 ```
 
 ##### Get Decks
