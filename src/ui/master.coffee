@@ -3,7 +3,7 @@
 # @example How to create A widget
 #   ui = new Ui
 #     ui.widget("name", ->
-#       console.log(@) 
+#       console.log(@)
 #     )
 #
 class Ui
@@ -76,7 +76,7 @@ class Ui
         for widgetName in Object.keys(slideWidgets)
           allWidgets[widgetName] = slideWidgets[widgetName]
         allWidgets
-      
+
   loadResults: (widgets)->
     dependencies = Object()
     for widgetName in Object.keys(widgets)

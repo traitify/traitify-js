@@ -92,10 +92,17 @@ MockRequest.addMock({
   params: {"response":true, "time_taken":1000},
   response: ""
 })
- 
+
 MockRequest.addMock({
   method: "GET",
   url: "https://api-sandbox.traitify.com/v1/assessments/played_with_blend/slides",
-  params: {}, 
+  params: {},
   response: apiFactory.build("slides", {number: 84, played: true})
+})
+
+MockRequest.addMock({
+  method: "GET",
+  url: "https://api-sandbox.traitify.com/v1/assessments/played/matches/careers",
+  params: "",
+  response: apiFactory.build("careers", {number: 8})
 })

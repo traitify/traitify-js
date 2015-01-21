@@ -20,7 +20,6 @@ unless Array::map
       k++
     A
 
-
 unless Array::filter
   Array::filter = (fun) -> #, thisp
     "use strict"
@@ -54,7 +53,6 @@ unless console
      log: ->
 
     }
-
 
 unless Object.keys
       Object.keys = (->
@@ -417,10 +415,10 @@ class ApiClient
     options ?= Object()
     options.image_pack ?= "linear"
     params = Array()
-        
+
     for key in Object.keys(options)
       params.push("#{key}=#{options[key]}")
-        
+
     @get("/assessments/#{id}/personality_types?#{params.join("&")}", callback)
 
   # Get Personality Traits
@@ -439,5 +437,34 @@ class ApiClient
   #
   getPersonalityTraits: (id, options, callback)->
     @get("/assessments/#{id}/personality_traits/raw", callback)
+
+  # Get Careers
+  #
+  # @example getCareers(assessmentId, options, callback)
+  #   options = {
+  #     "number_of_matches": 8
+  #     "experience_levels": "1, 2, 3, 4, 5"
+  #   }
+  #   Traitify.getCareers("your-assessment-id", options, function(data){
+  #     console.log(data)
+  #   })
+  #   # or use the Promise
+  #   Traitify.getCareers("your-assessment-id", options).then((data)->
+  #     console.log(data)
+  #   )
+  #
+  # @param [String] AssessmentId
+  # @param [String] Options
+  # @param [Function] Callback
+  #
+  getCareers: (id, options, callback)->
+    options ?= Object()
+    options.number_of_matches ?= 8
+    params = Array()
+
+    for key in Object.keys(options)
+      params.push("#{key}=#{options[key]}")
+
+    @get("/assessments/#{id}/matches/careers?#{params.join("&")}", callback)
 
 Traitify = new ApiClient()

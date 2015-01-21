@@ -39,14 +39,14 @@ When you initialize the widget we return our widget builder to you (This is the 
 <script>
 
     traitify = Traitify.ui.load(assessmentId, ".traitify-widget")
-    
+
     // This callback gives you the ability to trigger an event when
     // the widget has finished loading
     traitify.onInitialize(function(){
         console.log(traitify.data);
         console.log("Initialized");
     })
-    
+
     // This callback gives you the ability to trigger an event when
     // the user has finished playing the slide deck
     traitify.onFinished(function(){
@@ -78,14 +78,21 @@ Traitify.getSlides("assessment id", function(data){
 ##### Get Personality Traits
 ```JavaScript
 Traitify.addSlide("assessment id", function(data){
-    console.log(data)
+  console.log(data)
 })
 ```
 
 ##### Get Personality Traits
 ```JavaScript
 Traitify.getPersonalityTraits("assessment id", function(data){
-    console.log(data)
+  console.log(data)
+})
+```
+
+##### Get Careers
+```JavaScript
+Traitify.getCareers("assessment id", function(data){
+  console.log(data)
 })
 ```
 ### Using Edge
@@ -102,7 +109,7 @@ Warning, things may break if you use edge, it is not stable, and is not intended
 </script>
 ```
 
-### Contributing 
+### Contributing
 #### Building, Testing and Bundling:
 ```Shell
 $ cake watch
