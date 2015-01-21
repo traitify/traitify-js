@@ -4,7 +4,7 @@ QUnit.module( "Testing API", {setup: ->
   @Traitify.setHost("api-sandbox.traitify.com")
   @Traitify.setPublicKey("gglvv58easpesg9ajbltavb3gr")
   @Traitify.XHR = MockRequest
-});
+})
 
 QUnit.test( "API Client Set Host", (assert)->
   @Traitify.setHost("hi")
@@ -34,7 +34,7 @@ QUnit.test("API Client Get Slides", (assert)->
     assert.equal( slides[0].caption, "Navigating", "Checking that The Caption of The First Slide Succeeds!" )
   )
 )
-  
+
 QUnit.asyncTest("API Client Get Decks", (assert)->
   @Traitify.getDecks((decks)->
     assert.equal( decks[0].name, "Career Deck", "Checking that The First Deck Succeeds!" )
@@ -73,13 +73,13 @@ QUnit.test( "Test Beautify", (assert)->
   personalityTypes = @Traitify.getPersonalityTypes(playedAssessment)
   personalityTypes.then((response)->
     assert.ok(["personalityBlend", "personalityTypes"].indexOf(Object.keys(response)[0]) != -1, "Checking that The First Deck Succeeds!" )
-  ) 
+  )
   @Traitify.setBeautify(false)
   personalityTypes = @Traitify.getPersonalityTypes(playedAssessment)
   personalityTypes.then((response)->
     assert.ok(["personality_blend", "personality_types"].indexOf(Object.keys(response)[0]) != -1, "Checking that The First Deck Succeeds!" )
     assert.ok(["personalityBlend", "personalityTypes"].indexOf(Object.keys(response)[0]) == -1, "Checking that The First Deck Succeeds!" )
-  ) 
+  )
 )
 
 QUnit.test("Test Ajax XDomainRequest", (assert)->
@@ -112,7 +112,7 @@ QUnit.test("Test NO CORS SUPPORT", (assert)->
 QUnit.test("Test Errors", (assert)->
   errorTraitify = new ApiClient()
   errorTraitify.XHR = MockRequestWithError
-  
+
   errorTraitify.setVersion("v1")
   errorTraitify.setHost("api.traitify.com")
   errorTraitify.setPublicKey("gglvv58easpesg9ajbltavb3gr")
@@ -126,5 +126,12 @@ QUnit.test("Test Get Personality Traits", (assert)->
   personalityTypes = @Traitify.getPersonalityTraits(playedAssessment)
   personalityTypes.then((response)->
     assert.ok(response[0].personality_trait.definition, "Checking that The First Deck Succeedss!" )
+  )
+)
+
+QUnit.test("Test Get Careers", (assert)->
+  careers = @Traitify.getCareers(playedAssessment)
+  careers.then((response)->
+    assert.ok(response[0].career.title, "Computer-Controlled Machine Tool Operators, Metal and Plastic" )
   )
 )

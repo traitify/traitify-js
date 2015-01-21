@@ -3,7 +3,7 @@
 # @example How to create A widget
 #   ui = new Ui
 #     ui.widget("name", ->
-#       console.log(@) 
+#       console.log(@)
 #     )
 #
 class Ui
@@ -51,15 +51,23 @@ class Ui
           nonSlideWidgets[widgetName].widgets = allWidgets
       if Object.keys(slideWidgets).length != 0
         Traitify.getSlides(assessmentId).then((slides)->
-          playedSlides = slides.filter( (slide)-> 
-            slide.completed_at != null 
+          playedSlides = slides.filter( (slide)->
+            typeof slide.completed_at == "number"
           )
+
+          showResults = Object.keys(options).filter((widgetName)->
+            options[widgetName].showResults == false 
+          ).length == 0
+
           if playedSlides.length != slides.length
             for slideWidgetName in Object.keys(slideWidgets)
               slideWidget = slideWidgets[slideWidgetName]
               slideWidget.data.add("Slides", slides)
-              slideWidget.run()
-          else
+              if playedSlides.length == slides.length && showResults
+                slideWidget.callbacks.trigger("Finished")
+              else
+                slideWidget.run()
+          else  if showResults != false
             Traitify.ui.loadResults(nonSlideWidgets)
         )
 
@@ -68,7 +76,7 @@ class Ui
         for widgetName in Object.keys(slideWidgets)
           allWidgets[widgetName] = slideWidgets[widgetName]
         allWidgets
-      
+
   loadResults: (widgets)->
     dependencies = Object()
     for widgetName in Object.keys(widgets)
