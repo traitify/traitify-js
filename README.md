@@ -1,3 +1,5 @@
+# THIS LIBRARY HAS BEEN DEPRECATED, PLEASE USE https://github.com/traitify/traitify-widgets
+
 Traitify.js
 ===============
 
